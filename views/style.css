@@ -1,0 +1,18 @@
+.btn
+{
+    padding: 3px 6px;
+    border: 2px solid;
+    text-align: center;
+    height: 5px;
+    width: 10px;
+    
+}
+
+.list
+{
+    width: 20rem;
+    height: 20rem;
+    border-left: 1px; 
+    margin-bottom: 3px; 
+    margin-left: 3px;
+}

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HotelApp</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    
+</head>
+<body >
+    <style>
+        .btn
+        {
+        margin-top: 0px;
+        padding: 3px 6px;
+        border: 2px solid;
+        text-align: center;
+        height: 10px;
+        width: 20px;
+        display: inline;
+        margin-bottom: 0px;
+        }
+
+        .list
+    {
+    display: inline;
+    width: 25rem;
+    height: 25rem;
+    border-left: 1px;
+    margin-bottom: 3px; 
+    margin-left: 3px;
+
+    }
+    </style>
+    <br>
+     <h1  style="text-align: center;">All Hotels</h1>
+     <br>
+    <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" style="justify-content: center;box-sizing: none;">
+    
+        <% for(let listing of allListings){ %>
+                <div class="card list col listing-card" >
+                    <img class="card-img-top" src="<%= listing.image.url %>" alt="Card image cap" style="width: 23rem;height: 10rem;">
+                    
+                    <div class="card-body">
+                    <p class="card-text">
+                        <b><%= listing.title %></b><br>
+                        <%= listing.price.toLocaleString("en-IN") %>/night
+                        <br>
+                        <p><%= listing.description %></p><br>
+                        <a href="/listing/<%= listing._id %>" class="btn">Edit</a>
+                        <a action="/listing/<%= listing._id %>?_method=DELETE" class="btn">Delete</a>
+                    </p>
+                </div>
+              </div>
+        <% } %>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
