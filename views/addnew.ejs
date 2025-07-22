@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <style>
+        .container
+        {
+            padding-left: 100px;
+            border: 4px solid red;
+            border-radius: 5px;
+            justify-items: center;
+        }
+
+        .allLabels{
+            font-size: 25px;
+        
+        }
+
+        .allInputs{
+            width: 300px;
+            border-radius: 3px;
+        }
+    </style>
+    <h1 style="text-align: center;">Add New Listing</h1>
+
+    <div class="container">
+    <form action="/listing/new/super?_method=PUT" method="post" enctype="multipart/form-data">
+        <label for="" class="allLabels">Title:</label>
+        <input type="text"  name="listing[title]" class="allInputs" style="margin-left: 100px;">
+        <br><br>
+        <label for="" class="allLabels">Description:</label>
+        <textarea name="listing[description]" class="allInputs" style="margin-left: 30px;"></textarea>
+        <br><br>
+        <label for="" class="allLabels">Price:</label>
+        <input type="number"  name="listing[price] " class="allInputs" style="margin-left: 100px;">
+        <br><br>
+        <label for="" class="allLabels">Image:</label>
+        <input type="file" name="listing[image]" class="allInputs" style="margin-left: 90px;">
+        <br><br>
+        <label for="" class="allLabels">Country:</label>
+        <input type="text" name="listing[country]" class="allInputs" style="margin-left: 70px;">
+        <br><br>
+        <label for="" class="allLabels">Location:</label>
+        <input type="text" name="listing[location]" class="allInputs" style="margin-left: 60px;">
+        <br><br>
+        <button >Edit</button>
+    </form>
+    </div>
+    
+</body>
+</html>

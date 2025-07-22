@@ -29,7 +29,7 @@ const mongoose = require("mongoose");
 const Listing = require("./listing.js");
 const initData = require("./data.js");
 
-mongoose.connect("mongodb://127.0.0.1:27017/hotelApp")
+mongoose.connect("mongodb+srv://msr333:5MlCQesoDD3iNvyr@cluster1.rdtalh3.mongodb.net/?retryWrites=true&w=majority&appName=Cluster1")
   .then(() => {
     console.log(" MongoDB connected");
   })

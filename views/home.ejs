@@ -33,13 +33,14 @@
     }
     </style>
     <br>
-     <h1  style="text-align: center;">All Hotels</h1>
+     <h1  style="text-align: center;">All Hotels</h1><br>
+     <a href="/listing/new/listing" class="btn " style="justify-content: center; width : 40px; text-decoration: none; border: 2px solid black; padding: 2px 2px;"> Add new Listing</a>
      <br>
     <div class="row row-cols-lg-3 row-cols-md-2 row-cols-sm-1" style="justify-content: center;box-sizing: none;">
     
         <% for(let listing of allListings){ %>
                 <div class="card list col listing-card" >
-                    <img class="card-img-top" src="<%= listing.image.url %>" alt="Card image cap" style="width: 23rem;height: 10rem;">
+                    <img class="card-img-top" src="<%= listing.image %>" alt="Card image cap" style="width: 23rem;height: 10rem;">
                     
                     <div class="card-body">
                     <p class="card-text">
@@ -47,8 +48,12 @@
                         <%= listing.price.toLocaleString("en-IN") %>/night
                         <br>
                         <p><%= listing.description %></p><br>
-                        <a href="/listing/<%= listing._id %>" class="btn">Edit</a>
-                        <a action="/listing/<%= listing._id %>?_method=DELETE" class="btn">Delete</a>
+                        <div style="display: inline-flex;">
+                            <a href="/listing/<%= listing._id %>" class="btn " style="width: 40px; height: 30px; text-decoration: none; border: 2px solid black; padding: 2px 2px;">Edit</a>
+                            <form action="/listing/<%= listing._id %>?_method=DELETE" method="post"  enctype="multipart/form-data">
+                                <button  >Delete</button>
+                            </form>
+                        </div>
                     </p>
                 </div>
               </div>
