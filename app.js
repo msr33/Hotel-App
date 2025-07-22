@@ -33,7 +33,7 @@ printData();
 */
 const atlasDb = process.env.ATLASDB_URL;
 async function callMongo() {
-  await mongoose.connect("mongodb://127.0.0.1:27017/hotelApp");
+  await mongoose.connect(atlasDb);
     console.log("Connected to MongoDB");
 }
 
@@ -93,18 +93,10 @@ app.get("/listing/:id", async (req, res) => {
   let {id} = req.params;
     const listing = await Listing.findById(id);
     //console.log(listing);
-   res.redirect("edit", {listing});
+   res.render("edit", { listing });
 }
 );
 
-// app.put("/listing/:id",async (req, res)=> {
-//    console.log(2)
-//     let {id} = req.params;
-//     let listing = await Listing.findByIdAndUpdate(id, {...req.body.listing });
-//     console.log(listing);
-//     res.redirect("/listing");
-  
-// });
 
 app.delete("/listing/:id", async (req, res) => {
     let {id} = req.params;
